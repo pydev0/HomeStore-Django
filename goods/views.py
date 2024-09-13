@@ -29,13 +29,11 @@ def catalog(request, category_slug=None):
 
     current_page = paginator.page(int(page))
 
-    product_exists = goods.exists()
 
     context = {
         "title": "Home - Каталог",
         'goods': current_page,
         'slug_url': category_slug,
-        'product_exists': product_exists,
     }
     return render(request, "goods/catalog.html", context)
 
